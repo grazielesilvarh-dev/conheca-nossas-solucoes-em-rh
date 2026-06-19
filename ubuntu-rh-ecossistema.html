@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Graziele Silva — Ubuntu RH | Carreira, Posicionamento e Desenvolvimento para RH</title>
+<meta name="description" content="Mentorias, ferramentas e formações para profissionais de RH que querem reconhecer seu valor, se posicionar estrategicamente e assumir o protagonismo da própria carreira.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cafe:#3C2A1E;
+  --cafe-soft:#7A6352;
+  --cafe-line:#DDD0B8;
+  --areia:#F4EDE1;
+  --areia-light:#FDFAF5;
+  --champagne:#C9A876;
+  --champagne-soft:#E8D9BE;
+  --moss:#6D7A54;
+  --moss-dark:#4D5A38;
+  --white:#FFFFFF;
+  --shadow:0 24px 56px -28px rgba(60,42,30,.28);
+  --r:5px;
+}
+
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;overflow-x:hidden;}
+body{
+  background:var(--areia-light);
+  color:var(--cafe);
+  font-family:'DM Sans',sans-serif;
+  font-size:16px;
+  line-height:1.72;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img{max-width:100%;display:block;}
+a{color:inherit;text-decoration:none;}
+h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:600;color:var(--cafe);line-height:1.18;}
+p{margin-bottom:.9em;}
+p:last-child{margin-bottom:0;}
+ul{list-style:none;}
+:focus-visible{outline:2px solid var(--moss);outline-offset:3px;}
+
+.wrap{max-width:1100px;margin:0 auto;padding:0 32px;}
+
+/* ── EYEBROW ── */
+.ey{
+  font-family:'DM Sans',sans-serif;
+  font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--moss);font-weight:600;display:block;margin-bottom:16px;
+}
+
+/* ── NAV ── */
+.topnav{
+  position:sticky;top:0;z-index:50;
+  background:rgba(253,250,245,.94);backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--cafe-line);
+}
+.topnav-inner{
+  max-width:1100px;margin:0 auto;padding:15px 32px;
+  display:flex;align-items:center;justify-content:space-between;gap:20px;
+}
+.brand{font-family:'Playfair Display',serif;font-size:1rem;font-weight:600;letter-spacing:.03em;white-space:nowrap;}
+.brand em{color:var(--moss);font-style:italic;}
+.nav-links{
+  display:flex;gap:24px;overflow-x:auto;scrollbar-width:none;
+  font-size:.78rem;font-weight:500;min-width:0;flex-shrink:1;
+}
+.nav-links::-webkit-scrollbar{display:none;}
+.nav-links a{white-space:nowrap;color:var(--cafe-soft);padding:3px 0;border-bottom:1px solid transparent;transition:color .2s,border-color .2s;}
+.nav-links a:hover{color:var(--moss);border-color:var(--moss);}
+
+/* ── BUTTONS ── */
+.btn{
+  display:inline-flex;align-items:center;gap:.45em;
+  font-family:'DM Sans',sans-serif;font-weight:600;font-size:.88rem;
+  padding:13px 26px;border-radius:var(--r);cursor:pointer;
+  transition:transform .2s,box-shadow .2s,background .2s,opacity .2s;
+  border:1.5px solid transparent;
+}
+.btn-dark{background:var(--cafe);color:var(--areia-light);}
+.btn-dark:hover{transform:translateY(-2px);box-shadow:var(--shadow);}
+.btn-ghost{background:transparent;border-color:var(--cafe-line);color:var(--cafe-soft);}
+.btn-ghost:hover{border-color:var(--cafe);color:var(--cafe);}
+.btn-moss{background:var(--moss);color:#fff;width:100%;justify-content:center;border-radius:var(--r);}
+.btn-moss:hover{background:var(--moss-dark);}
+.btn-cafe{background:var(--cafe);color:#fff;width:100%;justify-content:center;border-radius:var(--r);}
+.btn-cafe:hover{background:#271A10;}
+
+/* ── HERO ── */
+.hero{padding:72px 0 0;}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:64px;align-items:center;}
+.hero-text .ey{margin-bottom:20px;}
+.hero h1{font-size:clamp(2.5rem,4.4vw,3.6rem);line-height:1.1;margin-bottom:22px;}
+.hero h1 em{color:var(--moss);}
+.hero-lede{font-size:1.14rem;color:var(--cafe-soft);max-width:500px;margin-bottom:32px;}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:12px;}
+.hero-photo{position:relative;}
+.hero-photo img{border-radius:var(--r);box-shadow:var(--shadow);}
+.hero-photo::after{
+  content:"";position:absolute;inset:20px -20px -20px 20px;
+  border:1px solid var(--champagne);border-radius:var(--r);z-index:-1;
+}
+.values-strip{
+  margin-top:68px;padding:24px 0;
+  border-top:1px solid var(--cafe-line);
+  text-align:center;letter-spacing:.01em;
+}
+.values-strip span{font-family:'Playfair Display',serif;font-style:italic;font-size:1.05rem;color:var(--cafe-soft);}
+.values-strip .dot{color:var(--champagne);margin:0 .55em;font-style:normal;}
+
+/* ── BIO ── */
+.bio{padding:84px 0;}
+.bio-grid{display:grid;grid-template-columns:.72fr 1.28fr;gap:72px;align-items:start;}
+.bio-photo{position:sticky;top:100px;}
+.bio-photo img{border-radius:var(--r);box-shadow:var(--shadow);}
+.bio-copy h2{font-size:clamp(1.8rem,2.8vw,2.4rem);margin-bottom:24px;}
+.bio-copy > p{color:var(--cafe-soft);font-size:1.03rem;}
+.pull{
+  font-family:'Playfair Display',serif;font-style:italic;
+  font-size:1.45rem;line-height:1.42;color:var(--cafe);
+  margin:32px 0;padding-left:22px;border-left:2.5px solid var(--moss);
+}
+
+/* ── STATS ── */
+.stats-wrap{margin-top:56px;padding-top:40px;border-top:1px solid var(--cafe-line);}
+.stats-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);
+}
+.stat{padding:20px 24px;border-right:1px solid var(--cafe-line);}
+.stat:nth-child(4),.stat:last-child{border-right:none;}
+.stat:nth-child(n+5){border-top:1px solid var(--cafe-line);}
+.stat .num{
+  font-family:'Playfair Display',serif;font-size:.94rem;font-weight:400;font-style:italic;
+  color:var(--cafe);display:block;margin-bottom:2px;
+}
+.stat .lab{font-size:.75rem;color:var(--cafe-soft);line-height:1.4;}
+
+/* ── MAP ── */
+.map{padding:88px 0;background:var(--cafe);color:var(--areia-light);}
+.map .ey{color:var(--champagne);}
+.map h2{
+  color:var(--areia-light);font-size:clamp(1.8rem,2.8vw,2.35rem);
+  max-width:640px;margin-bottom:14px;
+}
+.map > .wrap > p{color:#C2AE98;max-width:580px;font-size:1rem;margin-bottom:48px;}
+.map-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;}
+.map-card{
+  border:1px solid rgba(201,168,118,.22);border-radius:var(--r);
+  padding:28px 22px;display:flex;flex-direction:column;
+  transition:border-color .25s,transform .22s;
+}
+.map-card:hover{border-color:var(--champagne);transform:translateY(-4px);}
+.map-card .q{
+  font-family:'Playfair Display',serif;font-style:italic;
+  font-size:1.05rem;color:var(--champagne);margin-bottom:10px;
+}
+.map-card p{color:#CBBBAA;font-size:.91rem;flex-grow:1;margin-bottom:0;}
+.map-card a{
+  font-size:.75rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--areia-light);border-top:1px solid rgba(201,168,118,.2);
+  padding-top:14px;margin-top:16px;
+  display:flex;justify-content:space-between;
+  transition:color .2s;
+}
+.map-card a:hover{color:var(--champagne);}
+.map-close{
+  text-align:center;font-family:'Playfair Display',serif;font-style:italic;
+  font-size:1.2rem;color:#C2AE98;margin-top:52px;
+}
+
+/* ── OFFER SECTIONS ── */
+.offer{padding:88px 0;}
+.offer:nth-child(odd){background:var(--areia);}
+
+.section-head{max-width:760px;margin-bottom:52px;}
+.section-head h2{font-size:clamp(1.9rem,3vw,2.5rem);margin-bottom:12px;}
+.section-head .sub{color:var(--moss);font-weight:500;font-size:1.02rem;font-style:italic;}
+
+/* ── PRODUCT CARDS ── */
+.card-grid{display:grid;gap:24px;}
+.card-grid.two{grid-template-columns:1fr 1fr;}
+.card-grid.four{grid-template-columns:1fr 1fr 1fr 1fr;}
+
+.pcard{
+  background:var(--white);border:1px solid var(--cafe-line);
+  border-radius:var(--r);padding:32px 30px;
+  display:flex;flex-direction:column;
+  box-shadow:0 6px 22px -16px rgba(60,42,30,.18);
+  transition:box-shadow .25s,transform .22s;
+}
+.pcard:hover{box-shadow:var(--shadow);transform:translateY(-3px);}
+.pcard.gold{border-color:var(--champagne);background:linear-gradient(160deg,#FFFCF6 0%,#fff 80px);}
+
+.pcard-eyebrow{
+  font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;
+  font-weight:700;color:var(--champagne);margin-bottom:10px;
+}
+.pcard h3{font-size:1.25rem;margin-bottom:8px;line-height:1.25;}
+.pcard .tagline{
+  font-family:'Playfair Display',serif;font-style:italic;
+  color:var(--cafe-soft);font-size:.98rem;margin-bottom:0;
+}
+
+.pcard-foot{
+  margin-top:auto;padding-top:22px;
+  border-top:1px solid var(--cafe-line);
+  display:flex;align-items:center;justify-content:space-between;gap:14px;
+}
+.price{font-family:'Playfair Display',serif;font-size:1.15rem;color:var(--cafe);white-space:nowrap;}
+.price small{font-family:'DM Sans',sans-serif;font-size:.68rem;color:var(--cafe-soft);display:block;font-weight:500;}
+.pcard-foot .btn-moss,.pcard-foot .btn-cafe{width:auto;padding:11px 20px;}
+
+/* ── SAIBA MAIS ── */
+.more{margin-top:18px;}
+.more summary{
+  cursor:pointer;list-style:none;
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:.78rem;font-weight:600;letter-spacing:.05em;
+  color:var(--moss);user-select:none;
+  transition:opacity .2s;
+}
+.more summary::-webkit-details-marker{display:none;}
+.more summary::marker{content:"";}
+.more summary:hover{opacity:.75;}
+.more summary .ico{
+  width:16px;height:16px;border:1.5px solid var(--moss);border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:.72rem;line-height:1;flex-shrink:0;
+  transition:transform .25s;
+}
+details[open] .more summary .ico{transform:rotate(45deg);}
+.more-body{
+  margin-top:14px;padding-top:14px;
+  border-top:1px dashed var(--cafe-line);
+}
+.more-body p{color:var(--cafe-soft);font-size:.94rem;}
+.check{display:flex;flex-direction:column;gap:6px;margin:12px 0 18px;}
+.check li{
+  display:flex;align-items:flex-start;gap:10px;
+  font-size:.9rem;color:var(--cafe-soft);
+}
+.check li::before{
+  content:"✓";color:var(--moss);font-size:.72rem;font-weight:700;
+  border:1.5px solid var(--moss);border-radius:50%;
+  min-width:16px;height:16px;
+  display:flex;align-items:center;justify-content:center;
+  margin-top:3px;flex-shrink:0;
+}
+@media (min-width:601px){.check.two{display:grid;grid-template-columns:1fr 1fr;column-gap:20px;}}
+
+/* ── mini-card (formações) ── */
+.mcard{
+  background:var(--white);border:1px solid var(--cafe-line);border-radius:var(--r);
+  padding:26px 24px;display:flex;flex-direction:column;
+  box-shadow:0 4px 16px -12px rgba(60,42,30,.15);
+  transition:box-shadow .22s,transform .22s;
+}
+.mcard:hover{box-shadow:var(--shadow);transform:translateY(-3px);}
+.mcard h3{font-size:1.05rem;margin-bottom:6px;line-height:1.3;}
+.mcard .tagline{color:var(--cafe-soft);font-size:.88rem;}
+.mcard-foot{
+  margin-top:auto;padding-top:16px;border-top:1px solid var(--cafe-line);
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+}
+.mcard-foot .price{font-size:1rem;}
+.mcard-foot .btn-moss{width:auto;padding:9px 16px;font-size:.82rem;}
+
+/* imersão destaque */
+.icard{
+  background:var(--cafe);color:var(--areia-light);border-radius:var(--r);
+  padding:34px 32px;display:flex;align-items:center;justify-content:space-between;
+  gap:32px;box-shadow:var(--shadow);
+}
+.icard h3{font-size:1.35rem;color:var(--areia-light);margin-bottom:6px;}
+.icard .tagline{color:#C2AE98;font-size:.95rem;font-style:italic;}
+.icard .price{color:var(--champagne);}
+.icard .price small{color:#9B8B78;}
+.icard-right{display:flex;align-items:center;gap:24px;flex-shrink:0;}
+
+/* posic eco text */
+.posic-echo p{font-size:1.05rem;color:var(--cafe-soft);margin-bottom:.2em;}
+.posic-echo p strong{color:var(--cafe);font-weight:600;}
+.posic-echo .em{font-family:'Playfair Display',serif;font-style:italic;color:var(--moss);}
+
+/* ── CLOSING ── */
+.closing{padding:96px 0;}
+.closing-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center;}
+.closing-photo img{border-radius:var(--r);box-shadow:var(--shadow);}
+.closing h2{font-size:clamp(1.9rem,3.2vw,2.6rem);margin-bottom:20px;}
+.closing > .wrap > .closing-grid > div > p{color:var(--cafe-soft);font-size:1.05rem;margin-bottom:14px;}
+.closing .final{
+  font-family:'Playfair Display',serif;font-style:italic;
+  font-size:1.35rem;color:var(--moss);margin:26px 0 32px;line-height:1.5;
+}
+
+/* ── FOOTER ── */
+footer{background:var(--cafe);color:#A8937C;padding:32px 0;text-align:center;font-size:.82rem;}
+footer .brand{color:var(--areia-light);}
+
+/* ── BACK TO TOP ── */
+.btt{
+  position:fixed;bottom:24px;right:24px;z-index:40;
+  width:42px;height:42px;border-radius:50%;
+  background:var(--cafe);color:var(--areia-light);
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:var(--shadow);font-size:1rem;opacity:.85;
+  transition:opacity .2s,transform .2s;
+}
+.btt:hover{opacity:1;transform:translateY(-2px);}
+
+.hero-grid > *,.bio-grid > *,.closing-grid > *,.card-grid > *,.map-grid > *{min-width:0;}
+
+/* ── RESPONSIVE ── */
+@media(max-width:980px){
+  .hero-grid,.bio-grid,.closing-grid{grid-template-columns:1fr;}
+  .hero-grid > *,.bio-grid > *,.closing-grid > *{width:100%;max-width:100%;}
+  .hero-photo{max-width:400px;margin:0 auto;order:-1;}
+  .bio-photo{position:static;max-width:360px;margin:0 auto;}
+  .closing-photo{max-width:360px;margin:0 auto;order:-1;}
+  .stats-grid{grid-template-columns:repeat(2,1fr);}
+  .map-grid{grid-template-columns:1fr 1fr;}
+  .card-grid.two,.card-grid.four{grid-template-columns:1fr;}
+  .icard{flex-direction:column;align-items:flex-start;gap:20px;}
+  .icard-right{flex-direction:column;align-items:stretch;}
+}
+@media(max-width:600px){
+  .wrap{padding:0 20px;}
+  .hero{padding:48px 0 0;}
+  .hero-photo::after{display:none;}
+  .hero-lede{font-size:.98rem;}
+  .bio,.offer,.map,.closing{padding:64px 0;}
+  .stats-grid{grid-template-columns:1fr 1fr;}
+  .pcard,.mcard{padding:24px 20px;}
+  .pcard-foot{flex-direction:column;align-items:stretch;gap:12px;}
+  .pcard-foot .btn-moss,.pcard-foot .btn-cafe{width:100%;}
+  .mcard-foot{flex-direction:column;align-items:stretch;}
+  .mcard-foot .btn-moss{width:100%;}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto;}*{transition:none!important;}}
+</style>
+</head>
+<body>
+
+<!-- ═══ NAV ═══ -->
+<nav class="topnav">
+  <div class="topnav-inner">
+    <div class="brand">ubuntu <em>rh</em></div>
+    <div class="nav-links">
+      <a href="#inicio">Início</a>
+      <a href="#historia">Trajetória</a>
+      <a href="#mapa">Caminhos</a>
+      <a href="#orientacao">Orientação</a>
+      <a href="#direcao">Direção</a>
+      <a href="#formacao">Formação</a>
+      <a href="#posicionamento">Posicionamento</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<header id="inicio" class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div class="hero-text">
+        <span class="ey">Mentora de carreira em RH · 20+ anos de experiência</span>
+        <h1>Prazer, eu sou<br><em>Graziele Silva</em></h1>
+        <p class="hero-lede">Ajudo profissionais de RH a reconhecer seu valor, se posicionar estrategicamente e assumir o protagonismo da própria carreira.</p>
+        <div class="hero-ctas">
+          <a href="#mapa" class="btn btn-dark">Ver todos os caminhos</a>
+          <a href="#orientacao" class="btn btn-ghost">Conhecer a Mentoria DIRA</a>
+        </div>
+      </div>
+      <div class="hero-photo">
+        <img src="grazi-foto-01.jpg" alt="Graziele Silva, mentora de carreira em RH">
+      </div>
+    </div>
+
+    <div class="values-strip">
+      <span>Clareza</span><span class="dot">·</span>
+      <span>Direção</span><span class="dot">·</span>
+      <span>Confiança</span><span class="dot">·</span>
+      <span>Coragem</span><span class="dot">·</span>
+      <span>Movimento</span>
+    </div>
+  </div>
+</header>
+
+<!-- ═══ BIO ═══ -->
+<section id="historia" class="bio">
+  <div class="wrap">
+    <div class="bio-grid">
+      <div class="bio-photo">
+        <img src="grazi-foto-03.jpg" alt="Graziele Silva, retrato">
+      </div>
+      <div class="bio-copy">
+        <span class="ey">Trajetória</span>
+        <h2>Durante mais de 20 anos em RH, percebi um padrão em centenas de profissionais.</h2>
+        <p style="color:var(--cafe-soft);font-size:1.03rem;">Gestão de grandes equipes, suporte à alta liderança, projetos de alto impacto — e ainda assim, uma mesma trava se repete.</p>
+        <p class="pull">A maioria não cresce por falta de direção.</p>
+        <p style="color:var(--cafe-soft);font-size:1.03rem;">São profissionais competentes que não conseguem enxergar com clareza qual é o próximo passo. Foi por perceber esse padrão que criei o ecossistema Ubuntu RH.</p>
+
+        <details class="more">
+          <summary><span class="ico">+</span> Saiba mais sobre minha trajetória</summary>
+          <div class="more-body">
+            <p style="font-weight:600;color:var(--cafe);margin-bottom:12px;">Hoje ajudo profissionais a:</p>
+            <ul class="check two">
+              <li>Construir clareza sobre seus objetivos de carreira</li>
+              <li>Identificar seus diferenciais competitivos</li>
+              <li>Fortalecer posicionamento e autoridade profissional</li>
+              <li>Desenvolver repertório estratégico</li>
+              <li>Criar planos consistentes de crescimento</li>
+              <li>Conquistar novas oportunidades dentro e fora das organizações</li>
+            </ul>
+            <p style="margin-top:10px;">Não trabalho apenas currículo, LinkedIn ou entrevistas. Meu foco é ajudar você a compreender quem é profissionalmente, reconhecer o valor que já entrega e construir um caminho coerente com seus objetivos.</p>
+          </div>
+        </details>
+
+        <!-- STATS -->
+        <div class="stats-wrap">
+          <div class="stats-grid">
+            <div class="stat"><span class="num">20</span><span class="lab">anos em Recursos Humanos</span></div>
+            <div class="stat"><span class="num">Todos</span><span class="lab">os subsistemas de RH</span></div>
+            <div class="stat"><span class="num">Milhares</span><span class="lab">de colaboradores geridos</span></div>
+            <div class="stat"><span class="num">30+</span><span class="lab">inaugurações conduzidas</span></div>
+            <div class="stat"><span class="num">Dezenas</span><span class="lab">de milhões em folha sob gestão</span></div>
+            <div class="stat"><span class="num">Equipes</span><span class="lab">multidisciplinares lideradas</span></div>
+            <div class="stat"><span class="num">CEOs</span><span class="lab">e executivos atendidos</span></div>
+            <div class="stat"><span class="num">Centenas</span><span class="lab">de profissionais orientados</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ MAPA ═══ -->
+<section id="mapa" class="map">
+  <div class="wrap">
+    <span class="ey">O que você vai encontrar aqui</span>
+    <h2>Independentemente do momento da sua carreira, existe um caminho para o próximo passo.</h2>
+    <p>Escolha por onde faz sentido começar — não existe ordem certa, existe o que é certo para o seu momento agora.</p>
+
+    <div class="map-grid">
+      <div class="map-card">
+        <p class="q">Busca acompanhamento próximo?</p>
+        <p>Mentorias e consultorias individuais com olhar direcionado à sua realidade.</p>
+        <a href="#orientacao">Orientação Personalizada →</a>
+      </div>
+      <div class="map-card">
+        <p class="q">Busca direção?</p>
+        <p>Ferramentas para construir clareza sobre seu próximo passo e potencial de crescimento.</p>
+        <a href="#direcao">Direção de Carreira →</a>
+      </div>
+      <div class="map-card">
+        <p class="q">Busca crescimento?</p>
+        <p>Formações objetivas para desenvolver o repertório mais valorizado no RH atual.</p>
+        <a href="#formacao">Formações Aceleradas →</a>
+      </div>
+      <div class="map-card">
+        <p class="q">Busca reconhecimento?</p>
+        <p>Recursos práticos para fortalecer seu posicionamento e visibilidade profissional.</p>
+        <a href="#posicionamento">Posicionamento Profissional →</a>
+      </div>
+    </div>
+
+    <p class="map-close">O importante é não continuar parada no mesmo lugar.</p>
+  </div>
+</section>
+
+<!-- ═══ SEÇÃO 1 — ORIENTAÇÃO ═══ -->
+<section id="orientacao" class="offer">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="ey">Orientação Personalizada</span>
+      <h2>Acompanhamento direto para acelerar resultados</h2>
+      <p class="sub">O primeiro passo nem sempre é aprender mais — muitas vezes é entender o que fazer.</p>
+    </div>
+
+    <div class="card-grid two">
+
+      <div class="pcard gold">
+        <div class="pcard-eyebrow">Mentoria mais completa</div>
+        <h3>Mentoria DIRA</h3>
+        <p class="tagline">O caminho mais completo para reconhecer seu valor, se posicionar com autoridade e assumir o protagonismo da sua carreira no RH.</p>
+        <details class="more">
+          <summary><span class="ico">+</span> Ver o que está incluído</summary>
+          <div class="more-body">
+            <ul class="check two">
+              <li>Diagnóstico profundo do seu momento atual</li>
+              <li>Direção de carreira</li>
+              <li>Mapeamento de diferenciais e Análise SWOT</li>
+              <li>Análise de perfil de comportamento e temperamento</li>
+              <li>Rota estratégica personalizada</li>
+              <li>Posicionamento profissional</li>
+              <li>Currículo e LinkedIn estratégicos</li>
+              <li>Preparação para entrevistas</li>
+              <li>Desenvolvimento de repertório executivo</li>
+              <li>Plano de crescimento profissional</li>
+            </ul>
+            <p style="font-style:italic;color:var(--cafe-soft);">Para profissionais que desejam acelerar a evolução para posições estratégicas, liderança ou consultoria.</p>
+          </div>
+        </details>
+        <div class="pcard-foot">
+          <div class="price"><small>Acesso</small>Por candidatura</div>
+          <a href="https://forms.office.com/r/a6kDJHxBXj" class="btn btn-cafe" target="_blank" rel="noopener">Quero me candidatar</a>
+        </div>
+      </div>
+
+      <div class="pcard">
+        <h3>Consultoria Individual de Carreira</h3>
+        <p class="tagline">Clareza, pontos cegos e possibilidades que talvez você ainda não esteja enxergando.</p>
+        <details class="more">
+          <summary><span class="ico">+</span> Ver o que está incluído</summary>
+          <div class="more-body">
+            <p style="font-weight:600;color:var(--cafe);margin-bottom:10px;">Ideal para quem:</p>
+            <ul class="check">
+              <li>Está em transição ou busca recolocação</li>
+              <li>Deseja validar um plano de carreira</li>
+              <li>Precisa de direcionamento estratégico</li>
+              <li>Quer uma visão externa especializada</li>
+            </ul>
+            <p style="font-style:italic;">Em uma sessão aprofundada analisamos sua trajetória, seus desafios e construímos os próximos passos da sua carreira.</p>
+          </div>
+        </details>
+        <div class="pcard-foot">
+          <div class="price"><small>Formato</small>Sessão individual</div>
+          <a href="https://forms.office.com/r/6BtY1ZthPq" class="btn btn-moss" target="_blank" rel="noopener">Quero minha consultoria</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SEÇÃO 2 — DIREÇÃO ═══ -->
+<section id="direcao" class="offer">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="ey">Direção de Carreira</span>
+      <h2>Clareza antes de dar um passo maior</h2>
+      <p class="sub">Ferramentas que ajudam a tomar decisões mais conscientes e construir um plano para o futuro.</p>
+    </div>
+
+    <div class="card-grid two">
+
+      <div class="pcard">
+        <div class="pcard-eyebrow">🧭 Inteligência de carreira</div>
+        <h3>SOFIA</h3>
+        <p class="tagline">Sua consultora de carreira inteligente — o mapa do seu próximo nível.</p>
+        <details class="more">
+          <summary><span class="ico">+</span> Ver o que está incluído</summary>
+          <div class="more-body">
+            <ul class="check">
+              <li>Diagnóstico personalizado</li>
+              <li>Mapa dos caminhos mais promissores</li>
+              <li>Análise de forças técnicas e comportamentais</li>
+              <li>Direcionamento profissional baseado em dados</li>
+            </ul>
+            <p>Diferente de testes genéricos, a SOFIA cruza seu perfil com mais de 300 cargos específicos de RH para revelar onde você tem maior potencial de crescimento e retorno financeiro.</p>
+          </div>
+        </details>
+        <div class="pcard-foot">
+          <div class="price"><small>Investimento</small>R$ 39</div>
+          <a href="https://pay.hotmart.com/H104502048Q" class="btn btn-moss" target="_blank" rel="noopener">Quero minha análise</a>
+        </div>
+      </div>
+
+      <div class="pcard">
+        <h3>PEC — Plano Estratégico de Carreira</h3>
+        <p class="tagline">Ter objetivos não é o mesmo que ter um plano. O PEC transforma intenção em execução.</p>
+        <details class="more">
+          <summary><span class="ico">+</span> Ver o que está incluído</summary>
+          <div class="more-body">
+            <ul class="check">
+              <li>Diagnóstico de carreira</li>
+              <li>Avaliação dos pilares profissionais</li>
+              <li>Metas estruturadas</li>
+              <li>IA preditiva de trilha de carreira</li>
+              <li>Plano de ação</li>
+              <li>Dashboard de acompanhamento</li>
+              <li>Acesso às trilhas de carreira para desenvolvimento de repertório</li>
+            </ul>
+          </div>
+        </details>
+        <div class="pcard-foot">
+          <div class="price"><small>Investimento</small>R$ 197,00</div>
+          <a href="https://pay.hotmart.com/C104298924Y" class="btn btn-moss" target="_blank" rel="noopener">Quero o PEC</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SEÇÃO 3 — FORMAÇÕES ═══ -->
+<section id="formacao" class="offer">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="ey">Formações Aceleradas</span>
+      <h2>Desenvolva o repertório que o mercado exige</h2>
+      <p class="sub">Você não precisa aprender tudo — precisa aprender aquilo que acelera sua evolução.</p>
+    </div>
+
+    <div class="card-grid four" style="margin-bottom:20px;">
+      <div class="mcard">
+        <h3>Formação em Business Partner</h3>
+        <p class="tagline">O raciocínio estratégico dos BPs mais valorizados do mercado.</p>
+        <div class="mcard-foot">
+          <div class="price">R$ 97</div>
+          <a href="https://pay.hotmart.com/O102721313D" class="btn btn-moss" target="_blank" rel="noopener">Acessar</a>
+        </div>
+      </div>
+      <div class="mcard">
+        <h3>Formação em DHO</h3>
+        <p class="tagline">Desenvolvimento Humano e Organizacional aplicado à prática.</p>
+        <div class="mcard-foot">
+          <div class="price">R$ 97</div>
+          <a href="https://pay.hotmart.com/D104951292Y" class="btn btn-moss" target="_blank" rel="noopener">Acessar</a>
+        </div>
+      </div>
+      <div class="mcard">
+        <h3>Formação em Gestão Estratégica de RH</h3>
+        <p class="tagline">Como líderes de RH tomam decisões e geram impacto no negócio.</p>
+        <div class="mcard-foot">
+          <div class="price">R$ 97</div>
+          <a href="https://pay.hotmart.com/Q102693825A" class="btn btn-moss" target="_blank" rel="noopener">Acessar</a>
+        </div>
+      </div>
+      <div class="mcard">
+        <h3>Formação em Consultoria de RH</h3>
+        <p class="tagline">Estruture sua atuação consultiva e amplie suas oportunidades.</p>
+        <div class="mcard-foot">
+          <div class="price">R$ 97</div>
+          <a href="https://pay.hotmart.com/N102729056I" class="btn btn-moss" target="_blank" rel="noopener">Acessar</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="icard">
+      <div>
+        <span class="ey" style="color:var(--champagne);">Imersão gravada</span>
+        <h3>RH Estratégico</h3>
+        <p class="tagline">Pare de ser apenas a pessoa que executa — torne-se a profissional que influencia decisões.</p>
+      </div>
+      <div class="icard-right">
+        <div class="price" style="color:var(--champagne);font-size:1.3rem;text-align:center;"><small style="color:#9B8B78;">Investimento</small>R$ 197</div>
+        <a href="https://pay.hotmart.com/M100280696K" class="btn" style="background:var(--champagne);color:var(--cafe);font-weight:700;white-space:nowrap;" target="_blank" rel="noopener">Quero participar da Imersão</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SEÇÃO 4 — POSICIONAMENTO ═══ -->
+<section id="posicionamento" class="offer">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="ey">Posicionamento Profissional</span>
+      <h2>Competência sem visibilidade gera estagnação</h2>
+      <p class="sub">Muitos profissionais de RH sabem trabalhar. Poucos sabem comunicar o valor que entregam.</p>
+    </div>
+
+    <div class="card-grid two">
+
+      <div class="pcard gold">
+        <div class="pcard-eyebrow">Guia prático</div>
+        <h3>Guia de Posicionamento Profissional</h3>
+        <p class="tagline">Aprenda a reconhecer, organizar e comunicar o valor que você já entrega.</p>
+        <details class="more">
+          <summary><span class="ico">+</span> Ver o que está incluído</summary>
+          <div class="more-body">
+            <ul class="check">
+              <li>Guia completo</li>
+              <li>Aula complementar</li>
+              <li>Exercícios práticos</li>
+              <li>Roteiros de aplicação</li>
+            </ul>
+          </div>
+        </details>
+        <div class="pcard-foot">
+          <div class="price"><small>Investimento</small>R$ 67</div>
+          <a href="https://pay.hotmart.com/Y106311168G" class="btn btn-cafe" target="_blank" rel="noopener">Quero acessar o Guia</a>
+        </div>
+      </div>
+
+      <div class="pcard">
+        <h3>Diagnóstico Estratégico e Revisão de Currículo &amp; LinkedIn</h3>
+        <p class="tagline">Análise profissional do seu posicionamento atual — orientações específicas para fortalecer sua marca e aumentar sua atratividade para o mercado.</p>
+        <div class="pcard-foot">
+          <div class="price"><small>Investimento</small>R$ 97</div>
+          <a href="https://forms.office.com/r/5MCy0sUU1c" class="btn btn-moss" target="_blank" rel="noopener">Quero meu diagnóstico</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FECHAMENTO ═══ -->
+<section class="closing">
+  <div class="wrap">
+    <div class="closing-grid">
+      <div class="closing-photo">
+        <img src="grazi-foto-02.jpg" alt="Graziele Silva sorrindo">
+      </div>
+      <div>
+        <span class="ey">Próximo passo</span>
+        <h2>Você não precisa descobrir tudo sozinha.</h2>
+        <p>Toda carreira cresce mais rápido quando existe clareza. Escolha o recurso que faz sentido para o seu momento atual e dê o próximo passo.</p>
+        <p class="final">Porque crescimento profissional não acontece por acaso.<br>Acontece quando existe direção, estratégia e ação consistente.</p>
+        <a href="#mapa" class="btn btn-dark">Escolha seu próximo passo</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span class="brand" style="font-family:'Playfair Display',serif;">ubuntu <em style="color:var(--champagne);">rh</em></span>
+    &nbsp;·&nbsp; Consultoria em Recursos Humanos &nbsp;·&nbsp; Graziele Silva © 2026
+  </div>
+</footer>
+
+<a href="#inicio" class="btt" aria-label="Voltar ao topo">↑</a>
+
+</body>
+</html>
